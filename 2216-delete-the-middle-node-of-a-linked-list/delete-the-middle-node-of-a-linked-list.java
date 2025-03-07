@@ -11,6 +11,8 @@
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
 
+        if(head.next == null) return null;
+
         ListNode ptr1 = head, ptr2 = head;
 
         while (ptr2.next != null && ptr2.next.next != null && ptr2.next.next.next != null) {
@@ -18,8 +20,7 @@ class Solution {
             ptr2 = ptr2.next.next;
         }
 
-        if (head.next != null) ptr1.next = ptr1.next.next;
-        else head = ptr1.next;
+        ptr1.next = ptr1.next.next;
     
         return head;
     }

@@ -26,6 +26,6 @@ class Solution {
 
         if (root.val >= min) count++;
 
-        return count += countGoodNodes(root.left, curr_max) + countGoodNodes(root.right, curr_max);
+        return count + countGoodNodes(root.left, curr_max) + countGoodNodes(root.right, curr_max);
     }
 }
